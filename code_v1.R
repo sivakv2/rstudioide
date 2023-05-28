@@ -5,11 +5,65 @@
 word <- "INTEGRATED DEVELOPMENT ENVIRONMENT"
 nl <- nchar(word)
 
+w <- c("")
+
 for (i in 1:nl){
   w[i] <- substr(word,i,i)  
 }
 
 #w[11] == " "
+
+
+r <- c("")
+
+for (i in 1:nl){
+  if(w[i] == " "){
+    r[i] <- " "
+  }
+  else{
+    r[i] = "_"
+  }
+}
+
+final_result <- ""
+
+letter <- function(s) {
+  for (i in 1:nl)
+{
+  if (w[i]==s){
+#<<- indicates it can write to global values outside the function
+    r[i] <<- s
+  }
+  }
+  
+  for (i in 1:nl)
+  {
+    result <- sprintf("%s",r[i])
+    final_result <- paste(final_result,result)
+    #print(final_result)
+  }
+  print(final_result)
+}
+
+
+
+for (i in 1: 34)
+{
+  if (w[i]==s){
+    r[i] = s
+  }
+}
+
+
+final_result <- ""
+
+for (i in 1: 34)
+{
+  result <- sprintf("%s",r[i])
+  final_result <- paste(final_result,result)
+}
+
+
 
 
 #Data Type
